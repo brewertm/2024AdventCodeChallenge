@@ -1,11 +1,4 @@
-﻿using Microsoft.Extensions.Http.Resilience;
-using Polly;
-using System;
-using System.Net;
-using System.Net.Http;
-using System.Text;
-
-class MainReturnValTest
+﻿class MainReturnValTest
 {
 
 
@@ -13,9 +6,17 @@ class MainReturnValTest
     {
         Day1Part1(Day1NumbersList());
         Day1Part2(Day1NumbersList());
+        Day2Part1();
         
 
         return 0;
+    }
+
+    private static int Day2Part1()
+    {
+        int result = 0;
+        List<int[]> theList = Day2Numbers();
+        return result;
     }
 
     private static int Day1Part2(int[] day1numbers)
@@ -1098,6 +1099,28 @@ class MainReturnValTest
         21991,   30826 ];
 
         return day1numbers;
+    }
+
+    private static List<int[]> Day2Numbers()
+    {
+        string line;
+        List<int[]> day2Numbers = [];
+        StreamReader sr = new StreamReader("C:\\Users\\tbrewer\\Desktop\\day2numbers.txt");
+        //Read the first line of text
+        line = sr.ReadLine();
+        //Continue to read until you reach end of file
+        while (line != null)
+        {
+            foreach (char c in line)
+            {
+                Console.WriteLine();
+            }
+            //Read the next line
+            line = sr.ReadLine();
+        }
+        //close the file
+        sr.Close();
+        return day2Numbers;
     }
 
 }
